@@ -8,16 +8,18 @@
 #   max-iterations: 10
 #
 # Environment variables:
-#   RALPH_REPORT_ROTATE_BYTES   size threshold for report.html rotation
-#                               (default: 524288 = 512 KB)
+#   RALPH_REPORT_ROTATE_BYTES   size threshold for reports/report.html
+#                               rotation (default: 524288 = 512 KB)
 #
 # Behavior:
-#   - On each iteration: rotate report.html if it exceeds the size
-#     threshold, then invoke `claude` with prompt.md as the prompt.
-#   - claude failure exits immediately (no retry); transient failures
-#     are rare and retrying wastes time / tokens.
-#   - Detects `<promise>COMPLETE</promise>` in claude's output and
-#     exits 0 when seen.
+#   - On each iteration: rotate reports/report.html if it exceeds the size
+#     threshold (the current file becomes reports/report-<UTC>.html and a
+#     fresh one is started on the next iteration), then invoke `claude`
+#     with prompt.md as the prompt.
+#   - claude failure exits immediately (no retry); transient failures are
+#     rare and retrying wastes time / tokens.
+#   - Detects `<promise>COMPLETE</promise>` in claude's output and exits 0
+#     when seen.
 #   - Reaching max-iterations without completion exits 1.
 #
 # Dependencies:
@@ -28,12 +30,12 @@ set -euo pipefail
 
 MAX_ITERATIONS=${1:-10}
 PROMPT_FILE="prompt.md"
-REPORT_FILE="report.html"
-ARCHIVE_DIR="report-archive"
+REPORTS_DIR="reports"
+REPORT_FILE="$REPORTS_DIR/report.html"
 ROTATE_BYTES=${RALPH_REPORT_ROTATE_BYTES:-524288}
 SLEEP_SECONDS=2
 
-mkdir -p "$ARCHIVE_DIR"
+mkdir -p "$REPORTS_DIR"
 
 if [[ ! -f "$PROMPT_FILE" ]]; then
   echo "error: $PROMPT_FILE not found in $(pwd)." >&2
@@ -56,8 +58,8 @@ for ((i = 1; i <= MAX_ITERATIONS; i++)); do
     size=$(wc -c < "$REPORT_FILE")
     if (( size > ROTATE_BYTES )); then
       ts=$(date -u +%Y%m%dT%H%M%SZ)
-      mv "$REPORT_FILE" "$ARCHIVE_DIR/report-$ts.html"
-      echo "Rotated $REPORT_FILE ($size bytes) -> $ARCHIVE_DIR/report-$ts.html"
+      mv "$REPORT_FILE" "$REPORTS_DIR/report-$ts.html"
+      echo "Rotated $REPORT_FILE ($size bytes) -> $REPORTS_DIR/report-$ts.html"
     fi
   fi
 

@@ -3,5 +3,5 @@
 *.swp
 *.swo
 
-# Ralph runtime — report-archive/ is intentionally NOT ignored
-# (rotated reports are kept as Git history).
+# Note: reports/ is intentionally NOT ignored. Ralph's HTML reports
+# (including rotated archives) are kept as Git history.
