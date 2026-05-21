@@ -21,7 +21,6 @@ After that, hand off. The human chooses when to invoke `./ralph.sh` and how many
 - **Adding language-specific scaffolds.** No `Cargo.toml`, `package.json`, `pyproject.toml` in the template itself. The adopter's chosen stack is captured in `CONVENTIONS.md` and the first PRD task creates the actual file.
 - **Inflating `prompt.md` with project-specific rules.** Anything that varies by project belongs in `CONVENTIONS.md`. `prompt.md` stays generic so it changes rarely.
 - **Adding sample code.** A blank `_project/` after init is the intended state.
-- **Announcing "Ralph Loop"** in conversation with the user during setup. Use the conventions; do not narrate them.
 
 ## The four files the human always edits first
 

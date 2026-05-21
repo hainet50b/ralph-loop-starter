@@ -30,4 +30,3 @@ IMPORTANT:
 - Work on only ONE task per iteration, then stop.
 - Do not proceed to the next task.
 - Do not skip failing checks. Fix the code until they pass before marking the task complete.
-- Do not announce that this is a Ralph Loop project in your output — just behave accordingly.
