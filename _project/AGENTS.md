@@ -7,7 +7,7 @@ This project uses the **Ralph Loop** methodology — a development style that se
 - `PRD.md` — What / Why + open Tasks
 - `CONVENTIONS.md` — how code is written here
 - `reports/report.html` — Ralph's most recent execution notes (if present)
-- `prompt.md` / `ralph.sh` — Ralph's driver
+- `prompt.md` / `ralph.sh` / `ralph.ps1` — Ralph's driver
 
 ## Principles
 

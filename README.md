@@ -24,7 +24,7 @@ The agent will run `init.sh`, walk you through replacing placeholders and fillin
 | `CONVENTIONS.md` | How code is written (test pattern, lint, commits) |
 | `AGENTS.md` | Ralph Loop philosophy + first-time setup hints |
 | `prompt.md` | Ralph's per-loop instructions |
-| `ralph.sh` | Ralph's loop driver (claude CLI + size-based report rotation) |
+| `ralph.sh` / `ralph.ps1` | Ralph's loop driver (claude CLI + size-based report rotation) |
 | `.gitignore` | Standard ignores |
 
 The `reports/` directory and `reports/report.html` (Ralph's human-facing execution notes) are created on the first run of `ralph.sh`. Rotated reports stay in `reports/` alongside the current one.
