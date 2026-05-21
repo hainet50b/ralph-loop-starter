@@ -7,7 +7,7 @@
 # Behavior:
 #   1. Copies _project/ to the destination path.
 #   2. Makes ralph.sh executable.
-#   3. Runs `git init -b main` and stages the initial files.
+#   3. Runs `git init -b main`.
 #
 # The template files leave {{PROJECT_NAME}} placeholders literal. The
 # conversational LLM driving setup is expected to replace them as part of
@@ -16,8 +16,6 @@
 #
 # Notes:
 #   - Refuses to overwrite an existing non-empty destination.
-#   - Does not create the initial commit; the human reviews first, then
-#     commits when ready.
 
 set -euo pipefail
 
@@ -49,7 +47,6 @@ chmod +x "$DEST/ralph.sh"
 (
   cd "$DEST"
   git init -b main >/dev/null
-  git add .
 )
 
 cat <<EOF
@@ -59,6 +56,6 @@ Next steps:
   cd $DEST
   # 1. Replace {{PROJECT_NAME}} placeholders and fill in PRD.md, README.md,
   #    SPEC.md, CONVENTIONS.md together with your conversational LLM.
-  # 2. Review the staged files and create the initial commit when ready.
+  # 2. Stage and commit the initial files when ready.
   # 3. Run ./ralph.sh when the specs are in shape.
 EOF

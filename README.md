@@ -34,13 +34,3 @@ The `reports/` directory and `reports/report.html` (Ralph's human-facing executi
 > Spec by humans, plans by the conversational LLM, implementation by Ralph; everything load-bearing lives in plain text so the workflow survives code-host, editor, and AI-model changes.
 
 See [`_project/AGENTS.md`](_project/AGENTS.md) for the four operating principles.
-
-## Scope notes
-
-Things the template intentionally does **not** include:
-
-- A binary, daemon, or framework — `ralph.sh` is a short bash script by design
-- Language-specific scaffolds (Rust / Python / Node etc.) — the conversational LLM adds those per project via PRD
-- `progress.md` or `metrics.csv` — superseded by `reports/report.html` (human) and Git history (machine)
-
-The template is a starting point, not a destination. Adopters are expected to edit anything that doesn't fit, including `ralph.sh` and `prompt.md` themselves.
