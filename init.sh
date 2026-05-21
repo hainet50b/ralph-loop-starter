@@ -7,7 +7,8 @@
 # Behavior:
 #   1. Copies _project/ to the destination path.
 #   2. Makes ralph.sh executable.
-#   3. Runs `git init -b main`.
+#   3. Copies AGENTS.md to CLAUDE.md so Claude Code finds the same guidance.
+#   4. Runs `git init -b main`.
 #
 # The template files leave {{PROJECT_NAME}} placeholders literal. The
 # conversational LLM driving setup is expected to replace them as part of
