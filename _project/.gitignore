@@ -1,0 +1,7 @@
+# Local editor / OS noise
+.DS_Store
+*.swp
+*.swo
+
+# Ralph runtime — report-archive/ is intentionally NOT ignored
+# (rotated reports are kept as Git history).
