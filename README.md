@@ -29,6 +29,8 @@ The agent will run `init.sh`, walk you through replacing placeholders and fillin
 
 The `reports/` directory and `reports/report.html` (Ralph's human-facing execution notes) are created on the first run of `ralph.sh`. Rotated reports stay in `reports/` alongside the current one.
 
+`init.sh` and `init.ps1` also create a `CLAUDE.md` mirror of `AGENTS.md` so Claude Code picks up the same guidance. The mirror is always a plain copy — not a symlink — so the repo stays clean for projects developed on Linux and Windows in parallel. Re-copy `CLAUDE.md` from `AGENTS.md` whenever `AGENTS.md` changes.
+
 ## Philosophy in one sentence
 
 > Spec by humans, plans by the conversational LLM, implementation by Ralph; everything load-bearing lives in plain text so the workflow survives code-host, editor, and AI-model changes.

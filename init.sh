@@ -44,6 +44,13 @@ cp -r "$SOURCE"/. "$DEST"/
 
 chmod +x "$DEST/ralph.sh"
 
+# Mirror AGENTS.md to CLAUDE.md so Claude Code finds the same guidance.
+# Always a plain copy (not a symlink) because this project may be developed
+# on Linux and Windows simultaneously, and symlinks committed by a Linux
+# user become broken text files when a Windows user clones the repo.
+# Re-copy CLAUDE.md from AGENTS.md whenever AGENTS.md changes.
+cp "$DEST/AGENTS.md" "$DEST/CLAUDE.md"
+
 (
   cd "$DEST"
   git init -b main >/dev/null

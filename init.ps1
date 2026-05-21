@@ -45,6 +45,14 @@ Get-ChildItem -Force -LiteralPath $Source | ForEach-Object {
     Copy-Item -LiteralPath $_.FullName -Destination $Destination -Recurse -Force
 }
 
+# Mirror AGENTS.md to CLAUDE.md so Claude Code finds the same guidance.
+# Always a plain copy (not a symlink) because this project may be developed
+# on Linux and Windows simultaneously; symlinks committed by one OS turn
+# into broken text files when cloned on the other. Re-copy CLAUDE.md from
+# AGENTS.md whenever AGENTS.md changes.
+Copy-Item -LiteralPath (Join-Path $Destination 'AGENTS.md') `
+          -Destination (Join-Path $Destination 'CLAUDE.md') -Force
+
 Push-Location -LiteralPath $Destination
 try {
     & git init -b main | Out-Null
