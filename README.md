@@ -1,12 +1,12 @@
-# ralph-loop-template
+# ralph-loop-starter
 
 A bootstrap for projects driven by the **Ralph Loop** methodology — a workflow that separates _spec_ (kept by the human and a conversational LLM) from _implementation_ (carried out by Ralph, an executor LLM running in a loop against a PRD).
 
-This template is intentionally minimal. The artifacts it produces are markdown files, a single shell script, and an HTML report. There is no binary to install, no service to run, no abstraction to learn beyond reading the files it places.
+This starter is intentionally minimal. The artifacts it produces are markdown files, a single shell script, and an HTML report. There is no binary to install, no service to run, no abstraction to learn beyond reading the files it places.
 
 ## Usage
 
-Clone or copy this template, then run the bootstrap from a normal shell — no AI involved at this step.
+Clone or copy this starter, then run the bootstrap from a normal shell — no AI involved at this step.
 
 ```sh
 ./init.sh ~/projects/my-new-thing        # Linux / macOS

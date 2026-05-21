@@ -18,7 +18,7 @@ This project uses the **Ralph Loop** methodology — a development style that se
 
 ## First-time setup
 
-When a fresh project from `ralph-loop-template` is being set up, several skeletons need real values. Walk the human through them in this order:
+When a fresh project from `ralph-loop-starter` is being set up, several skeletons need real values. Walk the human through them in this order:
 
 1. `PRD.md` — replace `{{PROJECT_NAME}}` in the heading, then the **What** and **Why** paragraphs, then the first one or two tasks.
 2. `README.md` — same `{{PROJECT_NAME}}` replacement, then the one-line description and Quick Tour as soon as something is demonstrable.
