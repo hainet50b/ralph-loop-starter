@@ -6,15 +6,29 @@ This template is intentionally minimal. The artifacts it produces are markdown f
 
 ## Usage
 
-The expected workflow is to ask your conversational AI agent (Claude Code, Codex, Cursor, Aider, etc.) to apply this template for you. Something like:
+Clone or copy this template, then run the bootstrap from a normal shell — no AI involved at this step.
 
-> _Apply ralph-loop-template at `~/projects/my-new-thing` to start a new project. I want to build…_
+```sh
+./init.sh ~/projects/my-new-thing        # Linux / macOS
+.\init.ps1 $HOME\projects\my-new-thing   # Windows / PowerShell
+```
 
-The agent will run `init.sh`, walk you through replacing placeholders and filling in the spec documents based on what you want to build, and stop. You start `./ralph.sh` yourself when the specs are in shape.
+Move into the new project and start your conversational AI agent (Claude Code, Codex, Cursor, Aider, etc.) from there:
+
+```sh
+cd ~/projects/my-new-thing
+claude        # or your agent of choice
+```
+
+A useful first prompt is something like:
+
+> _I just initialized a Ralph Loop project here. I want to build [a short description of what you have in mind]. Walk me through first-time setup._
+
+The agent reads `AGENTS.md` / `CLAUDE.md` in the new project and walks you through replacing `{{PROJECT_NAME}}` placeholders and filling in the spec documents based on what you want to build. You start `./ralph.sh` (or `.\ralph.ps1`) yourself when the specs are in shape.
 
 ## What gets created
 
-`init.sh` copies `_project/` into a destination directory and runs `git init`. The generated project contains:
+`init.sh` (or `init.ps1`) copies `_project/` into a destination directory and runs `git init`. The generated project contains:
 
 | File | Role |
 | --- | --- |
@@ -29,10 +43,4 @@ The agent will run `init.sh`, walk you through replacing placeholders and fillin
 
 The `reports/` directory and `reports/report.html` (Ralph's human-facing execution notes) are created on the first run of `ralph.sh`. Rotated reports stay in `reports/` alongside the current one.
 
-`init.sh` and `init.ps1` also create a `CLAUDE.md` mirror of `AGENTS.md` so Claude Code picks up the same guidance. The mirror is always a plain copy — not a symlink — so the repo stays clean for projects developed on Linux and Windows in parallel. Re-copy `CLAUDE.md` from `AGENTS.md` whenever `AGENTS.md` changes.
-
-## Philosophy in one sentence
-
-> Spec by humans, plans by the conversational LLM, implementation by Ralph; everything load-bearing lives in plain text so the workflow survives code-host, editor, and AI-model changes.
-
-See [`_project/AGENTS.md`](_project/AGENTS.md) for the four operating principles.
+`init.sh` and `init.ps1` also create a `CLAUDE.md` mirror of `AGENTS.md` so Claude Code picks up the same guidance. Re-copy `CLAUDE.md` from `AGENTS.md` whenever `AGENTS.md` changes.
