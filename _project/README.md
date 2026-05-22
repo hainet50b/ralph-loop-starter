@@ -2,7 +2,7 @@
 
 > _One-line description._
 
-> This `README.md` is for end users. Developers (including AI agents) should also read `SPEC.md` and `CONVENTIONS.md` before working on the codebase.
+> This `README.md` is for end users. Developers (including AI agents) should also read the files under `SPEC/` and `CONVENTIONS.md` before working on the codebase.
 
 ## Features
 

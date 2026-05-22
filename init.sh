@@ -63,7 +63,7 @@ Initialized at $DEST
 Next steps:
   cd $DEST
   # 1. Replace {{PROJECT_NAME}} placeholders and fill in PRD.md, README.md,
-  #    SPEC.md, CONVENTIONS.md together with your conversational LLM.
+  #    SPEC/SPEC.md, CONVENTIONS.md together with your conversational LLM.
   # 2. Stage and commit the initial files when ready.
   # 3. Run ./ralph.sh when the specs are in shape.
 EOF

@@ -1,6 +1,6 @@
 # {{PROJECT_NAME}} — PRD
 
-This is the Product Requirements Document. It owns three things: the project's **What**, the project's **Why**, and the open and closed **Tasks**. End-user-facing surface lives in `README.md`; internal structure lives in `SPEC.md`; coding style lives in `CONVENTIONS.md`.
+This is the Product Requirements Document. It owns three things: the project's **What**, the project's **Why**, and the open and closed **Tasks**. End-user-facing surface lives in `README.md`; internal structure lives under `SPEC/`; coding style lives in `CONVENTIONS.md`.
 
 ## What
 

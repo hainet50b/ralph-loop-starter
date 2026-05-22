@@ -33,7 +33,7 @@ The agent reads `AGENTS.md` / `CLAUDE.md` in the new project and walks you throu
 | File | Role |
 | --- | --- |
 | `README.md` | User-facing spec |
-| `SPEC.md` | Developer-facing internal spec (data model, architecture) |
+| `SPEC/` | Developer-facing internal spec. Starts with a nearly-empty `SPEC/SPEC.md`; add additional spec files (OpenAPI, ER diagrams, etc.) alongside as the project grows |
 | `PRD.md` | Product requirements (What / Why) + Tasks ledger |
 | `CONVENTIONS.md` | How code is written (test pattern, lint, commits) |
 | `AGENTS.md` | Ralph Loop philosophy + first-time setup hints |
