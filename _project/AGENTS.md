@@ -25,4 +25,10 @@ When a fresh project from `ralph-loop-starter` is being set up, several skeleton
 3. `SPEC.md` — replace `{{PROJECT_NAME}}` in the heading; Data Model and Architecture as the design firms up.
 4. `CONVENTIONS.md` — replace `{{PROJECT_NAME}}` in the heading; Tech Stack and the lint / format / test commands, typically right after the first PRD task lands.
 
-You should also propose updates to `PRD.md`'s What / Why sections proactively as the project's goals sharpen in conversation. The Tasks section is managed jointly with the human; the What / Why sections often drift behind reality unless someone — usually you — nudges them forward.
+You should also propose updates to the spec-layer files proactively — keeping them fresh is your beat, not Ralph's:
+
+- `PRD.md`'s What / Why drift as goals sharpen in conversation.
+- `SPEC.md` drifts most easily because no end user complains about an outdated internal spec. Whenever a new data model, module boundary, or invariant surfaces (or an existing one is implicitly changed), bring it up and propose the `SPEC.md` edit in the same conversation.
+- `README.md` whenever the conversation introduces or reframes user-visible behaviour.
+
+PRD's Tasks section is managed jointly with the human. The spec-layer updates above are owned by the human and you; Ralph is never asked to update them, which preserves the spec/implementation separation principle above.
