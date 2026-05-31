@@ -1,6 +1,6 @@
 # ralph-loop-starter
 
-A bootstrap for projects driven by the **Ralph Loop** methodology — a workflow that separates _spec_ (kept by the human and a conversational LLM) from _implementation_ (carried out by Ralph, an executor LLM running in a loop against a PRD).
+A bootstrap for projects driven by the [Ralph Loop](https://ghuntley.com/ralph/) methodology — a workflow that separates _spec_ (kept by the human and a conversational LLM) from _implementation_ (carried out by Ralph, an executor LLM running in a loop against a PRD).
 
 This starter is intentionally minimal. The artifacts it produces are markdown files, a single shell script, and an HTML report. There is no binary to install, no service to run, no abstraction to learn beyond reading the files it places.
 
