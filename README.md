@@ -4,6 +4,9 @@ A bootstrap for projects driven by the [Ralph Loop](https://ghuntley.com/ralph/)
 
 This starter is intentionally minimal. The artifacts it produces are markdown files, a single shell script, and an HTML report. There is no binary to install, no service to run, no abstraction to learn beyond reading the files it places.
 
+> [!NOTE]
+> The thinking behind this starter — externalized memory, documenting the "how," and treating the harness as plain text rather than a tool — is in [Living with a Harness — Notes from Ralph Loop](https://programacho.com/blog/living-with-a-harness/).
+
 ## Usage
 
 Clone or copy this starter, then run the bootstrap from a normal shell — no AI involved at this step.
